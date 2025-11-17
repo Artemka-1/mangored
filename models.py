@@ -1,9 +1,4 @@
-
-from mongoengine import Document, StringField, DateTimeField, ReferenceField, ListField, connect
-
-
-
-
+from mongoengine import Document, StringField, ListField, ReferenceField
 
 class Author(Document):
     fullname = StringField(required=True, unique=True)
@@ -11,14 +6,15 @@ class Author(Document):
     born_location = StringField()
     description = StringField()
 
-
-meta = {"collection": "authors"}
-
+    meta = {
+        'collection': 'authors'
+    }
 
 class Quote(Document):
     author = ReferenceField(Author, required=True)
     quote = StringField(required=True)
     tags = ListField(StringField())
 
-
-meta = {"collection": "quotes"}
+    meta = {
+        'collection': 'quotes'
+    }
