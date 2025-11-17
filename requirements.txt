@@ -1,0 +1,4 @@
+mongoengine==0.24.1
+pymongo==4.5.0
+redis==4.5.5
+python-dotenv==1.0.0
